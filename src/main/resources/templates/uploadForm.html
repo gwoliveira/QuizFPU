@@ -4,7 +4,8 @@
 	Usuário logado:
 	<span sec:authentication="name"></span>
 	<form th:action="@{/logout}" method="post">
-		<input type="submit" value="Sign Out" />
+		<input type="hidden" th:name="${_csrf.parameterName}"
+			th:value="${_csrf.token}" /> <input type="submit" value="Sign Out" />
 	</form>
 	<div th:if="${message}">
 		<h2 th:text="${message}"></h2>
