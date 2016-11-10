@@ -12,6 +12,8 @@
 
 	<div sec:authorize="hasRole('ROLE_ADMIN')">
 		<form method="POST" enctype="multipart/form-data" action="/">
+			<input type="hidden" th:name="${_csrf.parameterName}"
+				th:value="${_csrf.token}" />
 			<table>
 				<tr>
 					<td>File to upload:</td>
