@@ -26,8 +26,8 @@ import br.com.fpu.repository.StoreRepository;
 
 @Controller
 public class MainConstroller {
-	final Path rootDir;
-	final StoreRepository storeRepository;
+	private final Path rootDir;
+	private final StoreRepository storeRepository;
 
 	@Autowired
 	public MainConstroller(StoreRepository storeRepository) {
