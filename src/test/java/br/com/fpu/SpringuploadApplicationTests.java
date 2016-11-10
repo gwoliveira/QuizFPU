@@ -1,4 +1,4 @@
-package br.com.kismet;
+package br.com.fpu;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
