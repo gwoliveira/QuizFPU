@@ -36,6 +36,12 @@ public class MainConstroller {
 	}
 
 	@GetMapping("/")
+	public String index(Model model) {
+		return "index";
+	}
+
+
+	@GetMapping("/form")
 	public String form(Model model) {
 		model.addAttribute("files", storeRepository.findAll());
 		return "uploadForm";
@@ -66,7 +72,7 @@ public class MainConstroller {
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
 				.body(file);
 	}
-	
+
 	@GetMapping("/login")
 	public String login(){
 		return "login";

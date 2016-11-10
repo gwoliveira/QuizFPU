@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Projeto Quiz FPU" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <!--/*  Each token will be replaced by their respective titles in the resulting page. */-->
+    <title layout:title-pattern="$CONTENT_TITLE">Quiz FPU</title>
+    <link rel="stylesheet" media="screen" th:href="@{/css/bootstrap.min.css}" />
+    <link th:href="@{/img/favicon.ico}" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body>
+    <div class="container">
+        <div layout:fragment="content"></div>
+    </div>
+    <script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+
+</html>
