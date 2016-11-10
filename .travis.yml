@@ -8,6 +8,9 @@ cache:
   - .autoconf
   - $HOME/.m2
 
+services:
+  - postgresql
+
 install:
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
