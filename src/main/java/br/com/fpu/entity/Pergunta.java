@@ -19,6 +19,19 @@ public class Pergunta {
 	private String resposta_c;
 	private String resposta_correta;
 	
+public Pergunta(){
 	
+}	
+
+public Pergunta(Integer id_pergunta, String descricao_pergunta, String resposta_a, String resposta_b, String resposta_c, String resposta_correta){
+	
+	this.id_pergunta = id_pergunta;
+	this.descricao_pergunta = descricao_pergunta;
+	this.resposta_a = resposta_a;
+	this.resposta_b = resposta_b;
+	this.resposta_c = resposta_c;
+	this.resposta_correta = resposta_correta;
+	
+}
 	
 }
