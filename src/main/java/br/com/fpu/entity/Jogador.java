@@ -1,68 +1,50 @@
 package br.com.fpu.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-import java.sql.Time;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "tb_jogador")
 public class Jogador {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idJogador;
-	private String nomeJogador;
-	private Time horaInicial;
-	private Time horaFinal;
-	private Integer placar;
+	@Column(name = "id_jogador")
+	private Integer id;
 	
+	@Column(length = 200, nullable = false)
+	private String nome;
 	
+	@OneToOne
+	@JoinColumn(name = "id_jogo")
+	private Jogo jogo;
 	
 	public Jogador() {
-		super();
-		// TODO Auto-generated constructor stub
+	}	
+	
+	public Jogador(Integer id, String nome) {
+		this.id = id;
+		this.nome = nome;
 	}
-	public Jogador(Integer idJogador, String nomeJogador, Time horaInicial, Time horaFinal, Integer placar) {
-		super();
-		this.idJogador = idJogador;
-		this.nomeJogador = nomeJogador;
-		this.horaInicial = horaInicial;
-		this.horaFinal = horaFinal;
-		this.placar = placar;
-	}
+
 	public Integer getIdJogador() {
-		return idJogador;
+		return id;
 	}
-	public void setIdJogador(Integer idJogador) {
-		this.idJogador = idJogador;
-	}
-	public String getNomeJogador() {
-		return nomeJogador;
-	}
-	public void setNomeJogador(String nomeJogador) {
-		this.nomeJogador = nomeJogador;
-	}
-	public Time getHoraInicial() {
-		return horaInicial;
-	}
-	public void setHoraInicial(Time horaInicial) {
-		this.horaInicial = horaInicial;
-	}
-	public Time getHoraFinal() {
-		return horaFinal;
-	}
-	public void setHoraFinal(Time horaFinal) {
-		this.horaFinal = horaFinal;
-	}
-	public Integer getPlacar() {
-		return placar;
-	}
-	public void setPlacar(Integer placar) {
-		this.placar = placar;
+	public void setIdJogador(Integer id) {
+		this.id = id;
 	}
 
-
-	
-	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 }
