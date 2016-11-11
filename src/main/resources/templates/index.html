@@ -4,11 +4,43 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="layout">
 <head>
-<title>Index title</title>
+<title>Faculdade Politécnica de Uberlândia</title>
 </head>
 
 <body>
-	<div layout:fragment="content">página inicial FPU</div>
+	<div layout:fragment="content" data-control="createUser">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>
+					<img th:src="@{/img/faculdade-politecnica-de-uberlandia.png}"
+						alt="Faculdade Politécnica de Uberlândia"
+						class="img-responsive center-block" />
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div
+				class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+				<hr />
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<span class="glyphicon glyphicon-user"></span> <strong>Cadastro
+							- Quiz FPU</strong>
+					</div>
+					<div class="panel-body">
+						<form action="" method="post" id="create-user-form" novalidate="novalidate">
+							<div class="form-group">
+								<label for="name">Nome completo:</label> <input type="text"
+									name="name" id="name" class="form-control"
+									placeholder="Nome completo..." required="required" />
+							</div>
+							<button type="submit" class="btn btn-success btn-block">Iniciar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
