@@ -1,76 +1,76 @@
 package br.com.fpu.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name = "tb_pergunta")
 public class Pergunta {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer idPergunta;
-	private String descricaoPergunta;
-	private String respostaA;
-	private String respostaB;
-	private String respostaC;
-	private String respostaCorreta;	
+	@Column(name = "id_pergunta")
+	private Integer id;
 	
+	@Column(nullable = false)
+	private String descricao;
+	
+	//Caminho da imagem
+	private String path;
+	
+	@OneToMany(targetEntity = Resposta.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Resposta> respostas;
 	
 	public Pergunta() {
+	}
+
+	public Pergunta(Integer id, String descricao, String path, List<Resposta> respostas) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.id = id;
+		this.descricao = descricao;
+		this.path = path;
+		this.respostas = respostas;
 	}
-	public Pergunta(Integer idPergunta, String descricaoPergunta, String respostaA, String respostaB, String respostaC,
-			String respostaCorreta) {
-		super();
-		this.idPergunta = idPergunta;
-		this.descricaoPergunta = descricaoPergunta;
-		this.respostaA = respostaA;
-		this.respostaB = respostaB;
-		this.respostaC = respostaC;
-		this.respostaCorreta = respostaCorreta;
+
+	public Integer getId() {
+		return id;
 	}
-	public Integer getIdPergunta() {
-		return idPergunta;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public void setIdPergunta(Integer idPergunta) {
-		this.idPergunta = idPergunta;
+
+	public String getDescricao() {
+		return descricao;
 	}
-	public String getDescricaoPergunta() {
-		return descricaoPergunta;
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	public void setDescricaoPergunta(String descricaoPergunta) {
-		this.descricaoPergunta = descricaoPergunta;
+
+	public String getPath() {
+		return path;
 	}
-	public String getRespostaA() {
-		return respostaA;
+
+	public void setPath(String path) {
+		this.path = path;
 	}
-	public void setRespostaA(String respostaA) {
-		this.respostaA = respostaA;
+
+	public List<Resposta> getRespostas() {
+		return respostas;
 	}
-	public String getRespostaB() {
-		return respostaB;
+
+	public void setRespostas(List<Resposta> respostas) {
+		this.respostas = respostas;
 	}
-	public void setRespostaB(String respostaB) {
-		this.respostaB = respostaB;
-	}
-	public String getRespostaC() {
-		return respostaC;
-	}
-	public void setRespostaC(String respostaC) {
-		this.respostaC = respostaC;
-	}
-	public String getRespostaCorreta() {
-		return respostaCorreta;
-	}
-	public void setRespostaCorreta(String respostaCorreta) {
-		this.respostaCorreta = respostaCorreta;
-	}
-	
-	
-	
-	
 }

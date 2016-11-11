@@ -25,12 +25,12 @@ import br.com.fpu.entity.Store;
 import br.com.fpu.repository.StoreRepository;
 
 @Controller
-public class MainConstroller {
+public class StoreController {
 	private final Path rootDir;
 	private final StoreRepository storeRepository;
 
 	@Autowired
-	public MainConstroller(StoreRepository storeRepository) {
+	public StoreController(StoreRepository storeRepository) {
 		this.storeRepository = storeRepository;
 		this.rootDir = Paths.get("/tmp");
 	}
