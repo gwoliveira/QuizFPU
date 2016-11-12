@@ -5,13 +5,13 @@
         function validateForm() {
             $( '#create-user-form' ).validate({
                 rules: {
-                    name: {
+                    nome: {
                         required: true,
                         minlength: 5
                     }
                 },
                 messages: {
-                    name: {
+                    nome: {
                         required: 'Não se esqueça de informar seu nome.',
                         minlength: 'Informe um nome com pelo menos 5 letras.'
                     }
