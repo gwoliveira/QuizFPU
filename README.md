@@ -15,7 +15,7 @@ git status
 git add *
 
 ##### Fazer um commit
- git comm it -m "comentários das alterações"
+ git commit -m "comentários das alterações"
 
 ##### Criar um novo branch chamado "funcionalidade-x"
 git checkout -b funcionalidade-x
