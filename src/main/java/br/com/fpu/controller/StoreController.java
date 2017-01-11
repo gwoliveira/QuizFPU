@@ -35,10 +35,7 @@ public class StoreController {
 		this.rootDir = Paths.get("/tmp");
 	}
 
-	@GetMapping("/")
-	public String index(Model model) {
-		return "index";
-	}
+	
 
 
 	@GetMapping("/form")
