@@ -15,9 +15,10 @@ install:
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 script:
-- mvn test -Dspring.profiles.active=prod
+- mvn test cobertura:cobertura -Dspring.profiles.active=prod
 
 after_success:
+- bash <(curl -s https://codecov.io/bash)
 - curl http://www.jpm4j.org/install/script | sh
 - jpm install com.codacy:codacy-coverage-reporter:assembly
 - codacy-coverage-reporter -l Java -r coverage.xml
